@@ -1,0 +1,82 @@
+1. What is Emmet?
+
+	Emmet is like an add-on to the text-editors,IDE like extensions which helps to write code faster (or) boost development. 
+	With emmet the expression is converted into code by pressing single keystroke.
+
+	For Example:
+	In an empty html file, type "!" and hit enter it will create a boilerplate of html.
+
+
+2. Difference between a Library and Framework?
+
+	Library:
+			=> Library is like building own home from the group-up. It can be designed, arranged, decorated and customized as needed.
+
+			=> In library the developer can choose when and where to execute code.
+	
+			=> Eg:React
+
+	Framework:
+			=> Framework is like buying a home which is already built. It cannot be customized.
+
+			=> In framework the code execution is done by framework.
+
+			=> Eg:Angular
+
+
+3. What is CDN? Why do we use it?
+
+	A Content Delivery Network(CDN) is a geographically distributed group of servers, which work together to provide a fast delivery of internet contents.
+	
+	* Improving website load time
+	* Improving website security
+	* Increasing content availability and redundancy
+	* Reducing bandwidth cost
+
+
+4. Why is React known as React?
+
+	The name 'React' was chosen because the library is designed to allow developers to 'react' to state and data changes in an application. 
+	And to update the user interface in an efficient and declarative manner.
+
+
+5. What is crossorigin in script tag?
+
+	The cross-origin attribute in script tag sets the mode of an request to the http cors request.
+	The cross-origin request is a request for a resource like stylesheet,media from another/different domain.
+
+	Example: abc.com ---> request helloworld.jgp from ---> xyz.com
+
+
+6. What is diference between React and ReactDOM?
+
+	=> React is a javascript library used to build user interface.
+	=> ReactDom is a javascript library which allows react to communicate with Dom.
+
+7. What is difference between react.development.js and react.production.js files via CDN?
+	
+	# react.production.js - This files contains code which are minified and optimized for production ready usage.
+	# react.development.js - This files contains code which are more readable and developer friendly for development usage.
+
+8. What is async and defer?
+
+	Both the async and defer are boolean attributes.
+
+	--> Without async/defer - In this scenario when script tag is encountered, html parsing is stopped then scripts will fetched and executed,
+					  once the execution of scripts overed then the html parsing is continued.
+
+	--> With async		- In this scenario when script tag is encountered, html parsing is done along with script fetching,
+					  once the script is fetched the html parsing is stopped then script is executed,
+					  once the script is executed then the html parsing is continued.
+
+					- It will not guarantee the order of execution of scripts so useful when referencing script like google analytics.
+
+					- Not usefull when script is depend on each others.
+
+	--> With defer		- In this scenario when script tag is encountered, html parsing is done along with script fetching and execution,
+					  It will not stops the parsing of html.
+					
+					- It will guarantee the order of execution of scripts useful when the scripts are depend on each others
+					
+
+	
