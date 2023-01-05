@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day-01 Inception(beginning/starting)</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!--Using Basic Html-->
+    <div id="container">
+        <h1>Using Basic HTML</h1>
+        <h2>Namaste React</h2>
+        <h3>Hello world</h3>
+    </div>
+
+    <hr>
+
+    <!--Using Javascript-->
+    <div id="js-container">
+
+    </div>
+
+    <hr>
+    <!--Using React-->
+    <div id="root">
+    </div>
+
+    <!--React CDN-->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <script>
+        // creates react element and return javascript object
+        const headingOne = React.createElement("h1", { "key": "headingOne" }, "Using React");
+        const headingTwo = React.createElement("h2", { "key": "headingTwo" }, "Namaste React");
+        const headingThree = React.createElement("h3", { "key": "headingThree" }, "Hello World");
+        //nested react element
+        const reactContainer = React.createElement(
+            "div",
+            {
+                "id": "react-container"
+            },
+            [headingOne, headingTwo, headingThree]);
+        const root = ReactDOM.createRoot(document.getElementById("root"));
+        root.render(headingOne); //? This will overwrite by below render method.
+        root.render(reactContainer);
+    </script>
+
+    <!--External Javascript File-->
+    <script src="app.js" defer></script>
+
+</body>
+
+</html>
