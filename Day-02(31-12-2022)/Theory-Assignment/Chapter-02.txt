@@ -1,0 +1,117 @@
+Chapter - 02 Igniting React App
+
+1. What is NPM?
+
+	=> NPM is the most popular software library/package manager which is used by almost every developers to download and manager their packages.
+	=> NPM consists of 2 things:
+		1. CLI- Command Line Interface which is used to publish, download and manage packages.
+		2. Website - A repository which is used to host packages.
+	=> NPM comes along with Node.js
+
+2. What is Parcel/Webpack? Why do we need it?
+
+	=> Parcel and Webpack both are free and open-source module bundlers which include others dependencies along with it to make development and
+production application process easier.	
+	=> We need these bundlers to minification, compression, tree shaking, optimization and so on..
+	=> Parcel is beast.
+
+3. What is .parcel-cache? 
+ 
+	   Parcel stores information about the project in the .parcel-cache file, when its build project 1st time and uses this information on further builds 
+This is the one of the key reason for why is parcel is faster in developement.
+
+4. What is npx?
+
+	=> NPX stands for Node Package Execute.
+	=> It comes automatically with NPM(above npm version 2.5.0).
+	=> It is a NPM package runner which executes any package from its registry without installing it.
+
+5. What is difference between dependencies vs devDependencies?
+
+	Both dependencies and devDependencies are basically a javascript object which consists of package meta-data.
+
+	Dependencies
+		1. It include packages that are required in production environment.
+		2. Use command "npm install <package-name>" to include package in dependencies object.
+		3. Eg package: react
+	DevDependenices
+		1. It include packages that are required in developement environment.
+		2. Use command "npm install --save-dev <package-name>" to include package in devDependencies object.
+		3. Eg package: parcel
+
+6. What is Tree Shaking?
+
+	Tree shaking is the process of removing un-used/dead code by the bundlers in the compilation process. In result the file size get reduced and 
+the performance get boosted.
+
+7. What is Hot Module Replacement?
+
+	Hot Module Replacement(HMR) - The process of replace, add or remove module when application is in running state without full reload. This will
+speed up the developement process by updating only the changes and retains the application state which will lost during the full reload.
+
+8. List down your favourite superpowers of Parcel and describe any 3 of them in your own words?
+
+		1. Zero Configuration Setup(Easy for beginners).
+		2. Tree Shanking(Removing dead code).
+		3. Caching(Faster Development).
+		4. Hot Module Replacement(HMR).	
+		5. Bundling(Combines collection of file into single).
+		6. Code clean up(When configured removed console.log statements).
+		7. Optimization(Reduce the size of file, images, media).
+
+	1. Zero Configuration Setup:- When compared with other bundlers like webpack it won't need any configuration to get started. 
+	2. Code clean up:- When configured it will the console.log statements, which will helpfull when moving code base to production.
+	3. Bundling:- With the help of bundling we can achieve performance and faster development.
+
+9. What is .gitignore? What should we add and not add into it?
+
+		=> .gitignore is a text file which tells git that not to push to repository, which are the files,directories,path.. mentioned in the .gitignore file.
+		=> We can add node_modules folder/directory in the .gitignore file, because its huge in size(world's biggest object) and
+it can be regenerate with the help of configuration file like package.json.
+		=> The configuration files like package.json or package-lock.json file are not be add in the .gitignore file,
+ because other developers who cloning the repository can regenerates the node_modules folder.
+
+10. What is the difference between package.json and package-lock.json?
+
+		=> Package.json
+			1.It contains only the meta data of that package.
+			2.Package.json is created once the npm init command is executed.
+			3.Dependency version are represented by using ^ or ~ 
+
+		=> Package-lock.json
+			1.It contains the meta data about its child/transitive dependencies package.
+			2.Package-lock.json  is created once the node_modules tree or package.json file is modified.
+			3.Exact dependenices version is present.
+
+11. Why should I not modify package-lock.json?
+
+		It will lock the dependencies with the exact version of dependencies when installed, when we modified the package-lock.json file then 
+in the regeneration of packages in production or other developer machine it will install the dependenicies which does not match our previous
+package-lock file this will lead to"Working in my machine and not working in the production or client machine" situations.
+
+12. What is node_modules ? Is it a good idea to push that on git?
+
+		=> Node_modules is a directory which contain the packages and its dependency packages in it when we install any packages using the command
+ "npm install <package-name>".
+		=> Its not a good practice to push node_modules on git, because the packages in the node_modules directory can be reinstall or regenerated
+with the help of package.json and package-lock.json files simply by using the command "npm install".
+
+13. What is the dist folder?
+
+		=> Dist stands for Distributable.
+		=> It contains the minified version of the source code, which is used in production application.
+		=> When the project is build using bundlers like parcel, it will creates the dist folder which contains the bundled version of the project
+(i.e) all the html,css and js files are bundled together as single html,css and js files.
+
+14. What is browserlists. Read about dif bundlers: vite, webpack, parcel?
+
+		=> Browserlists is used to extend support of the application for old browsers or other region user'browser.
+		=> In package.json it is easily configured by providing key as "browsersList" and an array of browser version as value.
+
+15. Read about: ^ - caret and ~ - tilda?
+
+		^(caret) - In the package.json, if the package version represented using the ^(caret) symbol then it will update the package with
+minor/patch version without incrementing the major version. Eg: 1.2.0 < 2.0.0.
+
+		~(tilda) - In the package.json, if the package version represented using the ~(tilda) symbol then it will update the package with
+only patch version with incrementing the minor version. Eg: 1.2.0 < 1.3.0
